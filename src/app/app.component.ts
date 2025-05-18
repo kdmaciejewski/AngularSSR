@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {ArticleFormComponent} from './components/article-form/article-form.component';
+import {ArticleListComponent} from './components/article-list/article-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ArticleFormComponent, ArticleListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
