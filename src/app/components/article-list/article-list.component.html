@@ -10,7 +10,7 @@
 <!--lazy loading using @defer blocks-->
 <!---->
 
-@defer (hydrate on viewport) {
+@defer (hydrate on immediate) {
   <h2>Article List</h2>
 } @placeholder {
   <h2>Loading........</h2>
@@ -19,7 +19,7 @@
 <div class="grid-container">
   @for (article of articles; track article.id) {
     <div class="article-card">
-      @defer (hydrate on viewport) {
+      @defer (hydrate on immediate) {
         <h3>{{ article.title }}</h3>
         <p>{{ article.content }}</p>
       } @placeholder {
