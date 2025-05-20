@@ -10,7 +10,7 @@
 <!--lazy loading using @defer blocks-->
 
 
-@defer (hydrate on viewport) {
+@defer (hydrate on idle) {
   <h2>Article List</h2>
 } @placeholder {
   <h2>Loading........</h2>
@@ -19,14 +19,12 @@
 <div class="grid-container">
   @for (article of articles; track article.id) {
     <div class="article-card">
-      <h3>{{ article.title }}</h3>
-
-      @defer (hydrate on viewport) {
+      @defer (hydrate on idle) {
+        <h3>{{ article.title }}</h3>
         <p>{{ article.content }}</p>
       } @placeholder {
         <p><em>Loading content...</em></p>
       }
-
       <button (click)="deleteArticle(article.id)">🗑️ Delete</button>
     </div>
   }
